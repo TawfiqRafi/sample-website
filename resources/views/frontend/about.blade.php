@@ -3,61 +3,78 @@
 @section('main_content')
 
 
-<div class="container-xxl py-5 bg-primary hero-header mb-5">
-    <div class="container my-5 py-3 px-lg-5">
-        <div class="row g-5 py-5">
-            <div class="col-12 text-center">
-                <h1 class="text-white animated zoomIn">About Us</h1>
-                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a class="text-white" href="{{ route('home') }}">Home</a></li>
-                        {{-- <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li> --}}
-                        <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                    </ol>
-                </nav>
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">About Us</h1>
+            <a href="{{ route('home') }}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">About</a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+<div class="modal-dialog modal-fullscreen">
+    <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+        <div class="modal-header border-0">
+            <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center">
+            <div class="input-group" style="max-width: 600px;">
+                <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
             </div>
         </div>
     </div>
 </div>
-<!-- Navbar & Hero End -->
-
-
-<!-- Full Screen Search Start -->
-{{-- <div class="modal fade" id="searchModal" tabindex="-1">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
-            <div class="modal-header border-0">
-                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex align-items-center justify-content-center">
-                <div class="input-group" style="max-width: 600px;">
-                    <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
-                    <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
+</div>
 <!-- Full Screen Search End -->
 
 
 <!-- About Start -->
-<div class="container-xxl py-5">
-    <div class="container px-lg-5">
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="section-title position-relative mb-4 pb-2">
-                    <h6 class="position-relative text-primary ps-4">About Us</h6>
-                    <h2 class="mt-2">{{ $data?$data->title:'' }}</h2>
-                </div>
-                <div class="mb-4">{!! $data?$data->content:'' !!}</div>
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container py-5">
+    <div class="row g-5">
+        <div class="col-lg-7">
+            <div class="section-title position-relative pb-3 mb-5">
+                <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                <h1 class="mb-0">{{ $data?$data->title:'' }}</h1>
             </div>
-            <div class="col-lg-6">
-                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{ $data?asset($data->image):'' }}">
+            <div class="mb-4">{!! $data?$data->content:'' !!}</div>
+            {{-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet</p>
+            <div class="row g-0 mb-3">
+                <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                    <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Award Winning</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Professional Staff</h5>
+                </div>
+                <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                    <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>24/7 Support</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Fair Prices</h5>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                    <i class="fa fa-phone-alt text-white"></i>
+                </div>
+                <div class="ps-4">
+                    <h5 class="mb-2">Call to ask any question</h5>
+                    <h4 class="text-primary mb-0">+012 345 6789</h4>
+                </div>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a> --}}
+        </div>
+        <div class="col-lg-5" style="min-height: 500px;">
+            <div class="position-relative h-100">
+                <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{ $data?asset($data->image):'' }}" style="object-fit: cover;">
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- About End -->
 
