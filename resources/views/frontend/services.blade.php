@@ -8,7 +8,7 @@
             <h1 class="display-4 text-white animated zoomIn">Services</h1>
             <a href="{{ route('home') }}" class="h5 text-white">Home</a>
             <i class="far fa-circle text-white px-2"></i>
-            <a href="#" class="h5 text-white">Services</a>
+            <a href="#" class="h5 text-white active-primary">Services</a>
         </div>
     </div>
 </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+use App\Models\Product;
 use App\Models\SiteSettings;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -20,7 +20,7 @@ class Controller extends BaseController
         $this->data = [
             'page_title' => 'Mx-Coding',
             'page_header' => 'Mx-Coding',
-            'course_footers' => Course::latest()->limit(5)->get(),
+            'product_footers' => Product::latest()->limit(5)->get(),
             'settings' => SiteSettings::first(),
         ];
     }

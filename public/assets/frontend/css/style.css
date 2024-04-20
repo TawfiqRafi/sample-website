@@ -182,7 +182,7 @@ h6,
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
     }
-    
+
     .sticky-top.navbar-dark {
         position: fixed;
         background: #FFFFFF;
@@ -489,4 +489,12 @@ h6,
     .footer-about {
         margin-bottom: -75px;
     }
+}
+
+#logo-1 {
+    width: 30% !important;
+}
+
+.active-primary {
+    color: var(--primary) !important;
 }

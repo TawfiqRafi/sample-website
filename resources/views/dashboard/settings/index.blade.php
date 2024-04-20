@@ -30,26 +30,26 @@
                     <span class="text-danger">{{ $errors->first('logo') }}</span>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="" class="col-md-3 col-form-label"></label>
-                <div class="col-md-9">
-                    <center>
-                        <img style="width: 10%;border: 1px solid; border-radius: 10px;" id="viewer2" src="{{asset($data['logo_scroll'])}}" onerror="this.src='{{ asset('assets/frontend/img/img2.jpg')}}'" alt="about image"/>
-                    </center>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="" class="col-md-3 col-form-label">Logo on scroll</label>
-                <div class="col-md-9">
-                    <div class="custom-file">
-                        <input type="file" name="logo_scroll" id="customFileEg2" class="custom-file-input"
-                            accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
-                        <label class="custom-file-label" for="customFileEg2">Choose Logo</label>
-                    </div>
-                    {{-- <input type="file" name="image" id="" placeholder="Enter image" class="form-control"> --}}
-                    <span class="text-danger">{{ $errors->first('logo_scroll') }}</span>
-                </div>
-            </div>
+{{--            <div class="form-group row">--}}
+{{--                <label for="" class="col-md-3 col-form-label"></label>--}}
+{{--                <div class="col-md-9">--}}
+{{--                    <center>--}}
+{{--                        <img style="width: 10%;border: 1px solid; border-radius: 10px;" id="viewer2" src="{{asset($data['logo_scroll'])}}" onerror="this.src='{{ asset('assets/frontend/img/img2.jpg')}}'" alt="about image"/>--}}
+{{--                    </center>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="form-group row">--}}
+{{--                <label for="" class="col-md-3 col-form-label">Logo on scroll</label>--}}
+{{--                <div class="col-md-9">--}}
+{{--                    <div class="custom-file">--}}
+{{--                        <input type="file" name="logo_scroll" id="customFileEg2" class="custom-file-input"--}}
+{{--                            accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*">--}}
+{{--                        <label class="custom-file-label" for="customFileEg2">Choose Logo</label>--}}
+{{--                    </div>--}}
+{{--                    --}}{{-- <input type="file" name="image" id="" placeholder="Enter image" class="form-control"> --}}
+{{--                    <span class="text-danger">{{ $errors->first('logo_scroll') }}</span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="form-group row">
                 <label for="" class="col-md-3 col-form-label">Address</label>
                 <div class="col-md-9">

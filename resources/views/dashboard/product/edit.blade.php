@@ -3,17 +3,17 @@
 @section('content')
     <div class="box">
         <div class="box-header with-action">
-            <h5 class="box-title">Create New Course</h5>
-            <a href="{{ route('course.list') }}" class="btn btn-sm btn-secondary float-right">Course List</a>
+            <h5 class="box-title">Update Product</h5>
+            <a href="{{ route('product.list') }}" class="btn btn-sm btn-secondary float-right">Product List</a>
         </div>
-        {!! Form::open(['route' => 'course.store', 'method' => 'POST']) !!}
+        {!! Form::open(['route' => ['product.update', $product->slug], 'method' => 'PUT']) !!}
         <div class="box-body">
             <div class="form-group row">
                 <label for="" class="col-md-3 col-form-label"></label>
                 <div class="col-md-9">
                     <center>
                         <img style="width: 20%;border: 1px solid; border-radius: 10px;" id="viewer"
-                            src="{{ asset('assets/frontend/img/img2.jpg') }}" alt="about image" />
+                        src="{{asset($product['image'])}}" onerror="this.src='{{ asset('assets/frontend/img/img2.jpg')}}'" alt="product image" />
                     </center>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="form-group row">
                 <label for="" class="col-md-3 col-form-label">Title</label>
                 <div class="col-md-9">
-                    <input type="text" name="title" id="title" placeholder="Enter title" class="form-control">
+                    <input type="text" name="title" id="title" placeholder="Enter title" class="form-control" value="{{ $product['title'] }}">
                     <span class="text-danger">{{ $errors->first('title') }}</span>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <label for="" class="col-md-3 col-form-label">Short Description</label>
                 <div class="col-md-9">
                     <textarea type="text" name="short_description" id="" placeholder="Enter short description"
-                        class="form-control"></textarea>
+                        class="form-control">{{ $product['short_description'] }}</textarea>
                     <span class="text-danger">{{ $errors->first('short_description') }}</span>
                 </div>
             </div>
@@ -48,12 +48,12 @@
                 <label for="" class="col-md-3 col-form-label">Description</label>
                 <div class="col-md-9">
                     <textarea type="text" name="description" id="" placeholder="Enter description"
-                        class="form-control ckeditor"></textarea>
+                        class="form-control ckeditor">{!! $product['description'] !!}</textarea>
                     <span class="text-danger">{{ $errors->first('description') }}</span>
                 </div>
             </div>
             <div class="form-group my-10 text-right">
-                <button type="submit" class="btn btn-primary" onclick="formSubmit(this, event)">Save</button>
+                <button type="submit" class="btn btn-primary" onclick="formSubmit(this, event)">Update</button>
             </div>
             {!! Form::close() !!}
         </div>

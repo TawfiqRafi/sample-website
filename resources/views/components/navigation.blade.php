@@ -29,31 +29,31 @@
         <li class="treeview">
             <a href="javascript:void(0)">
                 <i class='bx bxs-videos text-green-400'></i>
-                <span>Courses</span>
+                <span>Products</span>
             </a>
             <ul class="treeview-menu">
                 <li>
-                    <a href="{{ route('course.list') }}">
+                    <a href="{{ route('product.list') }}">
                         <i class="bx bx-check-circle"></i>
-                        <span>All Courses</span>
+                        <span>All Products</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('course.create') }}">
+                    <a href="{{ route('product.create') }}">
                         <i class="bx bx-check-circle"></i>
-                        <span>Add Course</span>
+                        <span>Add Product</span>
                     </a>
                 </li>
             </ul>
         </li>
 
 
-        <li>
-            <a href="{{ route('home.index') }}" class="dashboard">
-                <i class='bx bxs-home' ></i>
-                <span>Home</span>
-            </a>
-        </li>
+{{--        <li>--}}
+{{--            <a href="{{ route('home.index') }}" class="dashboard">--}}
+{{--                <i class='bx bxs-home' ></i>--}}
+{{--                <span>Home</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <li>
             <a href="{{ route('about-us.index') }}" class="dashboard">
                 <i class='bx bxs-food-menu'></i>

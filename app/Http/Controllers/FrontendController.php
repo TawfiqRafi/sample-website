@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+use App\Models\Product;
 use App\Models\Message;
 use App\Models\Newsletter;
 use App\Models\Page;
@@ -17,7 +17,7 @@ class FrontendController extends Controller
         $data = [
             'page_title' => 'Home',
             'services' => Service::all(),
-            'courses' => Course::all(),
+            'products' => Product::all(),
             'about' => Page::where(['type' => 'about_us'])->first(),
             'home' => Page::where(['type' => 'home'])->first(),
 
@@ -74,23 +74,23 @@ class FrontendController extends Controller
 
         return view('frontend.service-details')->with(array_merge($this->data, $data));
     }
-    public function courses()
+    public function products()
     {
         $data = [
-            'page_title' => 'Courses',
-            'courses' => Course::all()
+            'page_title' => 'Products',
+            'products' => Product::all()
         ];
 
-        return view('frontend.courses')->with(array_merge($this->data, $data));
+        return view('frontend.products')->with(array_merge($this->data, $data));
     }
-    public function courseDetails($slug)
+    public function productDetails($slug)
     {
         $data = [
-            'page_title' => 'Course Details',
-            'course' => Course::where('slug',$slug)->first()
+            'page_title' => 'Product Details',
+            'product' => Product::where('slug',$slug)->first()
         ];
 
-        return view('frontend.course-details')->with(array_merge($this->data, $data));
+        return view('frontend.product-details')->with(array_merge($this->data, $data));
     }
     public function contact()
     {

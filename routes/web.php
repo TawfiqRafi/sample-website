@@ -19,8 +19,8 @@ Route::get('/terms-condition','App\Http\Controllers\FrontendController@terms')->
 Route::get('/about-us','App\Http\Controllers\FrontendController@about')->name('about-us');
 Route::get('/services','App\Http\Controllers\FrontendController@services')->name('services');
 Route::get('/service/{slug}','App\Http\Controllers\FrontendController@serviceDetails')->name('service-details');
-Route::get('/courses','App\Http\Controllers\FrontendController@courses')->name('courses');
-Route::get('/course/{slug}','App\Http\Controllers\FrontendController@courseDetails')->name('course-details');
+Route::get('/products','App\Http\Controllers\FrontendController@products')->name('products');
+Route::get('/product/{slug}','App\Http\Controllers\FrontendController@productDetails')->name('product-details');
 Route::get('/contact','App\Http\Controllers\FrontendController@contact')->name('contact');
 Route::post('/contact/submit','App\Http\Controllers\FrontendController@contactStore')->name('contact.submit');
 Route::post('/newsletter/submit','App\Http\Controllers\FrontendController@newsletterStore')->name('newsletter.submit');
@@ -91,12 +91,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function ($router) {
         $router->delete('/destroy/{slug}', [App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('destroy');
     });
 
-    $router->group(['prefix' => 'course', 'as' => 'course.'], function ($router) {
-        $router->get('/', [App\Http\Controllers\Admin\CourseController::class, 'index'])->name('list');
-        $router->get('/create', [App\Http\Controllers\Admin\CourseController::class, 'create'])->name('create');
-        $router->post('/create', [App\Http\Controllers\Admin\CourseController::class, 'store'])->name('store');
-        $router->get('/edit/{slug}', [App\Http\Controllers\Admin\CourseController::class, 'edit'])->name('edit');
-        $router->put('/edit/{slug}', [App\Http\Controllers\Admin\CourseController::class, 'update'])->name('update');
-        $router->delete('/destroy/{slug}', [App\Http\Controllers\Admin\CourseController::class, 'destroy'])->name('destroy');
+    $router->group(['prefix' => 'product', 'as' => 'product.'], function ($router) {
+        $router->get('/', [App\Http\Controllers\Admin\ProductController::class, 'index'])->name('list');
+        $router->get('/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create');
+        $router->post('/create', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('store');
+        $router->get('/edit/{slug}', [App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('edit');
+        $router->put('/edit/{slug}', [App\Http\Controllers\Admin\ProductController::class, 'update'])->name('update');
+        $router->delete('/destroy/{slug}', [App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('destroy');
     });
 });

@@ -7,13 +7,13 @@
     <div class="container my-5 py-3 px-lg-5">
         <div class="row g-5 py-5">
             <div class="col-12 text-center">
-                <h1 class="text-white animated zoomIn">{{ $course->title }}</h1>
+                <h1 class="text-white animated zoomIn">{{ $product->title }}</h1>
                 <hr class="bg-white mx-auto mt-0" style="width: 90px;">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
                         <li class="breadcrumb-item"><a class="text-white" href="{{ route('home') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a class="text-white" href="{{ route('courses') }}">Courses</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Course Details</li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{{ route('products') }}">Products</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Product Details</li>
                     </ol>
                 </nav>
             </div>
@@ -48,13 +48,13 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="section-title position-relative mb-4 pb-2">
-                    <h6 class="position-relative text-primary ps-4">Course Details</h6>
-                    <h2 class="mt-2">{{ $course?$course->title:'' }}</h2>
+                    <h6 class="position-relative text-primary ps-4">Product Details</h6>
+                    <h2 class="mt-2">{{ $product?$product->title:'' }}</h2>
                 </div>
-                <div class="mb-4">{!! $course?$course->description:'' !!}</div>
+                <div class="mb-4">{!! $product?$product->description:'' !!}</div>
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{ $course?asset($course->image):'' }}">
+                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{ $product?asset($product->image):'' }}">
             </div>
         </div>
     </div>

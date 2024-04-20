@@ -4,7 +4,7 @@
         <div class="header-left">
             <div class="logo">
                 <a href="{{ route('dashboard') }}">
-                    <h2>MX Coding System</h2>
+                    <h2>MX LLC</h2>
                 </a>
             </div>
             <span id="nav-control"><i class="bx bx-arrow-from-right"></i></span>
