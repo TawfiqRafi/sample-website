@@ -21,8 +21,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{ asset('assets/frontend/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('admin-assets/vendors/sweetalert/sweetalert2.min.css') }}">
+    <link href="{{ asset('assets/frontend/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/lib/animate/animate.min.css') }}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -61,6 +61,8 @@
     <script src="{{ asset('assets/frontend/lib/waypoints/waypoints.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/lib/counterup/counterup.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/vendors/sweetalert/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('assets/js/submitter.js') }}"></script>
 
     <!-- Template Javascript -->
     <script src="{{ asset('assets/frontend/js/main.js')}} "></script>

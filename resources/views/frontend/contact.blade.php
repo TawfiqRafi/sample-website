@@ -51,7 +51,7 @@
                 </div>
                 <div class="ps-4">
                     <h5 class="mb-2">Call to ask any question</h5>
-                    <h4 class="text-primary mb-0">+012 345 6789</h4>
+                    <h4 class="text-primary mb-0">{{ $settings ? $settings->phone : '' }}</h4>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="ps-4">
                     <h5 class="mb-2">Email to get free quote</h5>
-                    <h4 class="text-primary mb-0">info@example.com</h4>
+                    <h4 class="text-primary mb-0">{{ $settings ? $settings->email : '' }}</h4>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="ps-4">
                     <h5 class="mb-2">Visit our office</h5>
-                    <h4 class="text-primary mb-0">123 Street, NY, USA</h4>
+                    <h4 class="text-primary mb-0">{{ $settings ? $settings->address : '' }}</h4>
                 </div>
             </div>
         </div>

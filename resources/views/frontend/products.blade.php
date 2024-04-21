@@ -2,86 +2,65 @@
 
 @section('main_content')
 
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Products</h1>
+            <a href="{{ route('home') }}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white active-primary">Products</a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Navbar End -->
 
-<div class="container-xxl py-5 bg-primary hero-header mb-5">
-    <div class="container my-5 py-3 px-lg-5">
-        <div class="row g-5 py-5">
-            <div class="col-12 text-center">
-                <h1 class="text-white animated zoomIn">Products</h1>
-                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a class="text-white" href="{{ route('home') }}">Home</a></li>
-                        {{-- <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li> --}}
-                        <li class="breadcrumb-item text-white active" aria-current="page">Products</li>
-                    </ol>
-                </nav>
+
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+<div class="modal-dialog modal-fullscreen">
+    <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+        <div class="modal-header border-0">
+            <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex align-items-center justify-content-center">
+            <div class="input-group" style="max-width: 600px;">
+                <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
             </div>
         </div>
     </div>
 </div>
-<!-- Navbar & Hero End -->
+</div>
+<!-- Full Screen Search End -->
 
 
-        <!-- Full Screen Search Start -->
-        {{-- <div class="modal fade" id="searchModal" tabindex="-1">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
-                    <div class="modal-header border-0">
-                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center justify-content-center">
-                        <div class="input-group" style="max-width: 600px;">
-                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
-                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
-                        </div>
-                    </div>
+        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                    <h5 class="fw-bold text-primary text-uppercase">Our products</h5>
+                    <h1 class="mb-0">Recently Launched products</h1>
                 </div>
-            </div>
-        </div> --}}
-        <!-- Full Screen Search End -->
-
-
-<!-- Portfolio Start -->
-<div class="container-xxl py-5">
-    <div class="container px-lg-5">
-        <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="position-relative d-inline text-primary ps-4">Our Products</h6>
-            <h2 class="mt-2">Recently Launched Products</h2>
-        </div>
-        {{-- <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="col-12 text-center">
-                <ul class="list-inline mb-5" id="portfolio-flters">
-                    <li class="btn px-3 pe-4 active" data-filter="*">All</li>
-                    <li class="btn px-3 pe-4" data-filter=".first">Design</li>
-                    <li class="btn px-3 pe-4" data-filter=".second">Development</li>
-                </ul>
-            </div>
-        </div> --}}
-        <div class="row g-4 portfolio-container">
-            @if ($products)
-            @foreach ($products as  $key => $item)
-
-            <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
-                <div class="position-relative rounded overflow-hidden">
-                    <img class="img-fluid w-100" src="{{ asset($item->image)}}" alt="">
-                    <div class="portfolio-overlay">
-                        {{-- <a class="btn btn-light" href="img/portfolio-1.jpg')}}" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a> --}}
-                        <a class="mt-auto" href="{{ route('product-details',$item->slug) }}">
-                            <h5 class="text-white"><i class="fa fa-folder me-2"></i>{{ $item->title }}</h5>
-                            <small class="text-white">{{ $item->short_description }}</small>
-                            {{-- <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a> --}}
+                <div class="row g-5">
+                    @if ($products)
+                    @foreach ($products as  $key => $item)
+                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                        <a class="team-item bg-light rounded overflow-hidden" href="{{ route('product-details',$item->slug) }}">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset($item->image)}}" alt="">
+                            </div>
+                            <div class="text-center py-4">
+                                <h5 class="text-primary">{{ $item->title }}</h5>
+                                <p class="text-uppercase m-0">{{ $item->short_description }}</p>
+                            </div>
                         </a>
                     </div>
+                    @endforeach
+        
+                    @endif
                 </div>
             </div>
-            @endforeach
-
-            @endif
-        </div>
-    </div>
-</div>
-<!-- Portfolio End -->
+        </div> 
 
 
 @endsection
